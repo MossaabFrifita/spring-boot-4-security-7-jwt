@@ -24,6 +24,13 @@ public class User implements UserDetails { // make our app User a spring securit
     we have two options : implements the UserDetails interface or create a user class that extends User spring class which also
     implements UserDetails
  */
+
+    @Builder.Default
+    private boolean isVip = false;
+
+    @Builder.Default
+    private boolean enabled = false;
+
     @Id
     @GeneratedValue
     private Long id;

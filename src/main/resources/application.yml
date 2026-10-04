@@ -13,13 +13,25 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: your_username
+    password: your_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 server:
   port: 8086
 application:
   security:
     jwt:
       secret-key: 586B633834416E396D7436753879382F423F4428482B4C6250655367566B5970
-      expiration: 900000 #  15 min in ms
+      expiration: 900000 # 15 min in ms
       cookie-name: jwt-cookie
       refresh-token:
         expiration: 1296000000 # 15 days in ms
